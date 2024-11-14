@@ -7,57 +7,49 @@ class LatihanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Latihan UTS"),
+        title: const Text("UTS"),
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: Text(
-                  "Informatika",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),
-                ),
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Image.asset(
-                "images/latihan.jpg",
-                height: 250,
-                width: double.infinity,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                "Universitas Multi Data Palembang",
+              const Center(
+                  child: Text(
+                "UTSPAB1IF3A",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21),
-              ),
-              Text(
-                "Kota Palembang, Prov. Sumatera Selatan",
-                style: TextStyle(fontSize: 18),
-              ),
-              SizedBox(
+              )),
+              const SizedBox(
                 height: 8,
               ),
-              //area container merah (informasi detail)
+              Image.asset("images/uts.jpg",
+                  height: 250, width: double.infinity, fit: BoxFit.cover),
+              const Text("Universitas Multi Data Palembang",
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 21)),
+              const SizedBox(
+                height: 8,
+              ),
+              const Text("Kota Palembang, Prov, Sumatera Selatan",
+                  style: TextStyle(fontSize: 18)),
+              const SizedBox(
+                height: 16,
+              ),
+              // Area Container
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: Colors.red[900],
+                  color: const Color.fromARGB(255, 122, 26, 26),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.all(16),
+                width: double.infinity,
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
                   child: Column(
                     children: [
-                      //ToDo : baris berisi info
-                      Row(
+                      // baris isi info
+                      const Row(
                         children: [
-                          //kiri = status dan akreditasi
+                          // status dan akreditasi
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,27 +77,30 @@ class LatihanScreen extends StatelessWidget {
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold),
                                 ),
+                                SizedBox(
+                                  height: 8,
+                                )
                               ],
                             ),
                           ),
-                          //kanan = tgl berdiri dan jumlah mhs
+                          // tgl berdiri dan jumlah
                           Expanded(
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
                                   "Tanggal Berdiri",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
+                                  style: TextStyle(color: Colors.white),
                                 ),
                                 Text(
-                                  "9 April 20221",
+                                  "9 April 2021",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                SizedBox(height: 8),
+                                SizedBox(
+                                  height: 8,
+                                ),
                                 Text(
                                   "Jumlah Mahasiswa",
                                   style: TextStyle(color: Colors.white),
@@ -116,90 +111,129 @@ class LatihanScreen extends StatelessWidget {
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold),
                                 ),
+                                SizedBox(
+                                  height: 8,
+                                )
                               ],
                             ),
                           ),
                         ],
                       ),
-                      //ToDo : Baris berisi kontak
+                      // baris isi kontak
+
                       Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          //telp: icon+text
+                          // Kolom telepon
                           Expanded(
-                              child: Row(
-                            children: [
-                              Icon(
-                                Icons.phone,
-                                color: Colors.white,
-                              ),
-                              SizedBox(width: 4),
-                              Text(
-                                "0812-7110-3306",
-                                style: TextStyle(color: Colors.white),
-                              )
-                            ],
-                          )),
-                          //email : icon + text
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.phone, color: Colors.black),
+                                    const SizedBox(width: 8),
+                                    Flexible(
+                                        child: Text(
+                                      "0711-3764-00",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(color: Colors.white),
+                                    )),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          // Kolom email
                           Expanded(
-                              child: Row(
-                            children: [
-                              Icon(
-                                Icons.email,
-                                color: Colors.white,
-                              ),
-                              SizedBox(width: 4),
-                              Text(
-                                "kuliah@mdp.ac.id",
-                                style: TextStyle(color: Colors.white),
-                              )
-                            ],
-                          )),
-                          //
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.email, color: Colors.amber[100]),
+                                    const SizedBox(width: 8),
+                                    Flexible(
+                                        child: Text(
+                                      "kuliahumdp@mdp.ac.id",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(color: Colors.white),
+                                    )),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
+
+                          // Kolom website
                           Expanded(
-                              child: Row(
-                            children: [
-                              Icon(
-                                Icons.phone,
-                                color: Colors.white,
-                              ),
-                              SizedBox(width: 4),
-                              Text(
-                                "0812-7110-3306",
-                                style: TextStyle(color: Colors.white),
-                              )
-                            ],
-                          )),
-                          //akun medsos
-                          Expanded(
-                              child: Row(
-                            children: [
-                              Icon(
-                                Icons.laptop,
-                                color: Colors.white,
-                              ),
-                              Text(
-                                "@UniversitasMdp",
-                                style: TextStyle(color: Colors.white),
-                              )
-                            ],
-                          )),
-                          //website
-                          Expanded(
-                              child: Row(
-                            children: [
-                              Icon(
-                                Icons.link,
-                                color: Colors.white,
-                              ),
-                              Text(
-                                "mdp.ac.id",
-                                style: TextStyle(color: Colors.white),
-                              )
-                            ],
-                          )),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.link, color: Colors.blue[100]),
+                                    const SizedBox(width: 8),
+                                    Flexible(
+                                        child: Text(
+                                      "mdp.ac.id",
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(color: Colors.white),
+                                    )),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ),
                         ],
                       ),
+                    ],
+                  ),
+                ),
+              ),
+
+              SizedBox(
+                height: 16,
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: Colors.grey[300],
+                ),
+                width: double.infinity,
+                child: Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Alamat"),
+                      Text(
+                        "Jl.Rajawali",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          color: const Color.fromARGB(255, 97, 25, 25),
+                        ),
+                        width: double.infinity,
+                        height: 50,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment
+                              .center, // Center the content horizontally
+                          crossAxisAlignment: CrossAxisAlignment
+                              .center, // Center the content vertically
+                          children: [
+                            Text(
+                              "Lihat Map",
+                              style: TextStyle(color: Colors.white),
+                            )
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
